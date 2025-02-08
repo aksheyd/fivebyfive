@@ -290,6 +290,11 @@ class Game:
 			self.__printGrid()
 			input("\nPlease hit Enter to continue.\n")
 		
+		if isComplete:
+			os.system("clear")
+			self.__printGrid()
+			print("You win!!!")
+		
 
 def main():
 	def get_input():
