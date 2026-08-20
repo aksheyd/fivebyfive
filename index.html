@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Five by Five</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body>
+    <a class="skip" href="#board">Skip to the table</a>
+
+    <header class="brand">
+      <h1>Five by Five</h1>
+      <p class="lede">Fill the grid.</p>
+    </header>
+
+    <main>
+      <section class="stage" aria-label="The table">
+        <div
+          id="board"
+          class="board"
+          role="grid"
+          aria-label="Five by five card table"
+        ></div>
+      </section>
+
+      <footer class="dock">
+        <p id="status" class="status">Choose a seat beside a card.</p>
+        <p class="meta">Deck <span id="deck-count">—</span></p>
+        <div id="drawn-card" class="drawn-face is-empty" aria-label="No draw yet"></div>
+        <div id="guess-tray" class="guess-tray" hidden>
+          <p id="guess-prompt" class="guess-prompt"></p>
+          <div class="guess-actions">
+            <button type="button" id="guess-a"></button>
+            <button type="button" id="guess-b"></button>
+          </div>
+        </div>
+        <p id="result" class="result" aria-live="polite"></p>
+        <button type="button" id="deal-again">New deal</button>
+      </footer>
+    </main>
+
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+  </body>
+</html>

@@ -1,19 +1,42 @@
-# FivebyFive
- Fun card game
+<div align="center">
+
+# Five by Five
+
+A card game I learned from my cousins.
+
+[Play](#play) • [Rules](#rules) • [Tests](#tests)
+
+<img src="./docs/images/screenshot.png" alt="Five by Five table with the middle row dealt and a higher-or-lower guess open" width="720" />
+
+</div>
+
+Fill a 5×5 grid of cards on a dining-table surface. Open `index.html` in a browser, or serve the folder and visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+
+## Play
+
 ```
-python main.py
+python3 main.py
 ```
 
-Game I learned from my cousins. Place cards with rules to build a 5x5 grid of cards. \
-Middle row always is rebuilt, then you place cards adjacent to other cards. 
+> [!TIP]
+> You can also open `index.html` directly. No install, no build.
 
+## Rules
 
-If placement position is adjacent to one card, you pick if the number will be *higher* or *lower* than the adjacent card. \
-If placement position is adjacent to two cards, you pick if the number will be *in-between* or *outside* the number range formed by the 2 adjacent cards. \
-If placement position is adjacent to three cards, you pick if the suit will be *same* or *different* from the surrounding 3 cards' suits. \
-If placement position is adjacent to four card (surrounded), you pick if the number will be *same* or *different* from all surrounding cards (up to 8 cards). 
+The middle row is always dealt first. Play empty seats that sit beside at least one card.
 
-Once the 5x5 grid is placed - you win! 
+- One neighbor: guess **higher** or **lower** than that rank.
+- Two neighbors: guess **inside** or **outside** the range they form.
+- Three or four neighbors: guess **same** suit as a neighbor, or **different**.
 
+A hit places the drawn card. A miss sends that row and column back to the deck, then the middle row is refilled. Fill every seat to win.
 
-Fun Fact: I made this on a 9 hour flight from Amsterdam to Detroit.
+## Tests
+
+```
+npm test
+```
+
+That runs the shipped-rules tests plus script-load and source checks.
+
+The table photograph was created with Grok.
