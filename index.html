@@ -15,12 +15,15 @@
   <body>
     <a class="skip" href="#board">Skip to the table</a>
 
-    <header class="brand">
-      <h1>Five by Five</h1>
-      <p class="lede">Fill the grid.</p>
-    </header>
+    <main class="app">
+      <header class="brand">
+        <div class="brand-text">
+          <h1>Five by Five</h1>
+          <p class="lede">Fill the grid.</p>
+        </div>
+        <button type="button" id="deal-again" class="deal" aria-keyshortcuts="n">New deal<kbd class="key" aria-hidden="true">N</kbd></button>
+      </header>
 
-    <main>
       <section class="stage" aria-label="The table">
         <div
           id="board"
@@ -30,21 +33,61 @@
         ></div>
       </section>
 
-      <footer class="dock">
-        <p id="status" class="status">Choose a seat beside a card.</p>
-        <p class="meta">Deck <span id="deck-count">—</span></p>
-        <div id="drawn-card" class="drawn-face is-empty" aria-label="No draw yet"></div>
-        <div id="guess-tray" class="guess-tray" hidden>
-          <p id="guess-prompt" class="guess-prompt"></p>
-          <div class="guess-actions">
-            <button type="button" id="guess-a"></button>
-            <button type="button" id="guess-b"></button>
+      <div class="panel">
+        <section class="now" aria-label="The deal">
+          <div class="piles">
+            <figure class="pile">
+              <div id="deck" class="deck" role="img" aria-label="47 cards in the deck"><span id="deck-count">47</span></div>
+              <figcaption>Deck</figcaption>
+            </figure>
+            <figure class="pile">
+              <div id="drawn-card" class="drawn-face is-empty" role="img" aria-label="No draw yet"></div>
+              <figcaption>Drawn</figcaption>
+            </figure>
           </div>
-        </div>
-        <p id="result" class="result" aria-live="polite"></p>
-        <button type="button" id="deal-again">New deal</button>
-      </footer>
+          <div class="now-text">
+            <p id="result" class="result" aria-live="polite"></p>
+            <p id="status" class="status">Choose a seat beside a card.</p>
+            <p class="meta"><span id="filled-count">5</span> of 25 seats filled</p>
+            <button type="button" id="again" class="again">Deal again</button>
+          </div>
+        </section>
+
+        <section class="howto" id="how-to-play" aria-labelledby="howto-title">
+          <h2 id="howto-title">How to play</h2>
+          <p>Pick an empty seat next to a card, then guess the card you’ll draw.</p>
+          <ul class="rules">
+            <li>
+              <span class="mini" aria-hidden="true"><i></i><i></i><i></i><i class="c"></i><i class="s"></i><i></i><i></i><i></i><i></i></span>
+              <span><b>One neighbor</b> Higher or lower than it.</span>
+            </li>
+            <li>
+              <span class="mini" aria-hidden="true"><i></i><i></i><i></i><i class="c"></i><i class="s"></i><i class="c"></i><i></i><i></i><i></i></span>
+              <span><b>Two neighbors</b> Inside or outside their range.</span>
+            </li>
+            <li>
+              <span class="mini" aria-hidden="true"><i></i><i class="c"></i><i></i><i class="c"></i><i class="s"></i><i class="c"></i><i></i><i class="o"></i><i></i></span>
+              <span><b>Three or four</b> Same suit as one of them, or not.</span>
+            </li>
+          </ul>
+          <p class="fine">Ties count for you, and aces are low. A miss discards the drawn card, sends that row and column under the deck, and deals the middle row again. Fill all 25 seats to win.</p>
+          <p class="keyhint">Move with <kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd> or WASD, pick with <kbd>Enter</kbd>, and back out with <kbd>Esc</kbd>.</p>
+        </section>
+      </div>
     </main>
+
+    <div id="guess-tray" class="guess-tray" role="group" aria-labelledby="guess-prompt" hidden>
+      <div class="guess-head">
+        <p id="guess-prompt" class="guess-prompt"></p>
+        <button type="button" id="guess-close" class="guess-close" aria-label="Back out" aria-keyshortcuts="Escape">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" /></svg>
+        </button>
+      </div>
+      <div class="guess-actions">
+        <button type="button" id="guess-a" data-key="1" aria-keyshortcuts="1"></button>
+        <button type="button" id="guess-b" data-key="2" aria-keyshortcuts="2"></button>
+      </div>
+    </div>
 
     <script src="js/game.js"></script>
     <script src="js/ui.js"></script>
