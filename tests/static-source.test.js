@@ -60,6 +60,13 @@ localRefs(readme, /(?:src="|\]\()([^")]+)[")]/g).forEach(function (ref) {
   assert(exists(ref), "README link exists: " + ref);
 });
 
+var canonical = (html.match(/<link rel="canonical" href="([^"]+)"/) || [])[1] || "";
+assert(/^https:\/\/\S+\/$/.test(canonical), "index.html declares a canonical URL");
+assert(html.indexOf('property="og:url" content="' + canonical + '"') !== -1, "og:url matches the canonical URL");
+var ogImage = (html.match(/property="og:image" content="([^"]+)"/) || [])[1] || "";
+assert(ogImage.indexOf(canonical) === 0 && exists(ogImage.slice(canonical.length)), "og:image is a file on this site: " + ogImage);
+assert(read("sitemap.xml").indexOf("<loc>" + canonical + "</loc>") !== -1, "sitemap.xml lists the canonical URL");
+
 var ids = localRefs(ui, /getElementById\("([^"]+)"\)/g);
 assert(ids.length > 0, "js/ui.js looks up elements by id");
 ids.forEach(function (id) {
