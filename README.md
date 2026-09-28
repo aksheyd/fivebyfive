@@ -4,22 +4,15 @@
 
 A card game I learned from my cousins.
 
-[Play](#play) • [Rules](#rules) • [Controls](#controls) • [Tests](#tests) • [License](#license)
+**[Play it in your browser](https://aksheyd.github.io/fivebyfive/)**
+
+[Rules](#rules) • [Controls](#controls) • [Run locally](#run-locally) • [Tests](#tests) • [License](#license)
 
 <img src="./docs/images/screenshot.png" alt="Five by Five on a walnut table: ten cards on the 5×5 grid, a higher-or-lower guess open beside an empty seat, and the rules card on the right" width="560" />&nbsp;<img src="./docs/images/screenshot-phone.png" alt="Five by Five on a phone: the grid above the deck, the last draw, and the rules" width="162" />
 
 </div>
 
-Fill a 5×5 grid of cards on a walnut dining table. Open `index.html` in a browser, or serve the folder and visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/). It works on phones too, and your game is saved in the browser, so a refresh or restart picks up where you left off.
-
-## Play
-
-```
-python3 main.py
-```
-
-> [!TIP]
-> You can also open `index.html` directly. No install, no build.
+Fill a 5×5 grid of cards on a walnut dining table. It works on phones too, and your game is saved in the browser, so a refresh or restart picks up where you left off.
 
 ## Rules
 
@@ -42,6 +35,17 @@ Click or tap an open seat next to a card, then pick your guess. On a keyboard:
 | 1 or 2 | Choose the first or second guess |
 | Esc | Back out of a guess |
 | N | Deal a new game |
+
+## Run locally
+
+```
+python3 main.py
+```
+
+Then visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+
+> [!TIP]
+> You can also open `index.html` directly. No install, no build.
 
 ## Tests
 
