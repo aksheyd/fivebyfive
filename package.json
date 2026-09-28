@@ -2,10 +2,8 @@
   "name": "five-by-five",
   "private": true,
   "description": "Five by Five browser card game",
+  "license": "MIT",
   "scripts": {
     "test": "node tests/game-logic.test.js && node tests/script-load.test.js && node tests/static-source.test.js"
-  },
-  "devDependencies": {
-    "playwright": "^1.62.1"
   }
 }

@@ -4,7 +4,7 @@
 
 A card game I learned from my cousins.
 
-[Play](#play) • [Rules](#rules) • [Controls](#controls) • [Tests](#tests)
+[Play](#play) • [Rules](#rules) • [Controls](#controls) • [Tests](#tests) • [License](#license)
 
 <img src="./docs/images/screenshot.png" alt="Five by Five on a walnut table: ten cards on the 5×5 grid, a higher-or-lower guess open beside an empty seat, and the rules card on the right" width="560" />&nbsp;<img src="./docs/images/screenshot-phone.png" alt="Five by Five on a phone: the grid above the deck, the last draw, and the rules" width="162" />
 
@@ -49,6 +49,8 @@ Click or tap an open seat next to a card, then pick your guess. On a keyboard:
 npm test
 ```
 
-That runs the shipped-rules tests plus script-load and source checks.
+That runs the rules tests, checks that both scripts load as plain browser scripts, and checks that every file the page and this README point to exists. No dependencies to install.
 
-The table photograph was created with Grok.
+## License
+
+[MIT](LICENSE). The table photograph was created with Grok.

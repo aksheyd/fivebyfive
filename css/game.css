@@ -1,32 +1,3 @@
-/*
-  Token plan — Five by Five, Sunday dining table
-  Visual thesis: a sunlit walnut table is the whole screen. Cards sit
-    on the wood like a family game after lunch, with a paper score
-    card lying beside them.
-  Palette (named hex):
-    --walnut   #4A2E1C   table shadow
-    --bone     #F6EFE4   card stock and paper
-    --oxblood  #9A2E32   the one accent (suits, card backs, actions)
-    --soot     #2A211C   type
-    --straw    #C4A574   sunlit grain / open seats
-  Type:
-    display  Bodoni Moda  (name, ranks, headings)
-    body     Figtree      (status, rules)
-  Layout: landscape screens put the 5×5 on the left and one narrow
-    paper card on the right, top-aligned, with the board sized from the
-    viewport height so it never meets an edge. Portrait screens stack
-    the name, the board, then the deal and the rules as paper cards,
-    all on the wood.
-  Motion: --ease cubic-bezier(0.23, 1, 0.32, 1). 150ms for hover and
-    selection, 180ms for the guess, 200ms when a card is placed,
-    200ms when a cleared row and column leave together.
-  Signature: photographed walnut dining table as the full-bleed
-    playing surface — the table is the interface.
-  Rejected generic looks: warm cream + terracotta serif; dark canvas
-    with a single neon accent; broadsheet hairlines, zero radius,
-    newspaper columns. Also rejected: dark-mode app shells.
-*/
-
 :root {
   --walnut: #4A2E1C;
   --bone: #F6EFE4;
@@ -102,7 +73,7 @@ button {
   transform: none;
 }
 
-/* Portrait: name on the tablecloth, board on the wood, paper below. */
+/* Portrait: name, board, then the paper cards, stacked. */
 
 .app {
   --now-h: 104px;

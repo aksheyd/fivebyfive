@@ -26,14 +26,7 @@ function assert(cond, msg) {
 function loadScript(relPath) {
   var window = {};
   var sandbox = { window: window, console: console };
-  Object.defineProperty(sandbox, "module", { value: undefined });
-  Object.defineProperty(sandbox, "require", { value: undefined });
-  Object.defineProperty(sandbox, "process", { value: undefined });
   vm.createContext(sandbox);
-  assert(typeof sandbox.module === "undefined" || sandbox.module === undefined, relPath + " sandbox has no usable module");
-  assert(sandbox.require === undefined, relPath + " sandbox has no require");
-  assert(sandbox.process === undefined, relPath + " sandbox has no process");
-  assert(typeof sandbox.window === "object", relPath + " sandbox defines window");
   vm.runInContext(fs.readFileSync(path.join(ROOT, relPath), "utf8"), sandbox, {
     filename: relPath
   });
