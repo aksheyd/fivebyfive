@@ -51,6 +51,8 @@ npm test
 
 That runs the rules tests, checks that both scripts load as plain browser scripts, and checks that every file the page and this README point to exists. No dependencies to install.
 
+Pushing to `main` runs the same tests and deploys the site to GitHub Pages.
+
 ## License
 
 [MIT](LICENSE). The table photograph was created with Grok.
