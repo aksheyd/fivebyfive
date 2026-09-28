@@ -229,11 +229,11 @@
     var x;
     for (x = 0; x < SIZE; x++) {
       if (isOccupied(grid[x][col])) {
-        deck.push(cloneCard(grid[x][col]));
+        deck.unshift(cloneCard(grid[x][col]));
         grid[x][col] = null;
       }
       if (isOccupied(grid[row][x])) {
-        deck.push(cloneCard(grid[row][x]));
+        deck.unshift(cloneCard(grid[row][x]));
         grid[row][x] = null;
       }
     }

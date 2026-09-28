@@ -238,6 +238,11 @@ assert(
     "higher miss: two cleared cards return, one is popped to refill (deck net +1 from the extra column card)"
   );
   assertEq(result.state.deck.length, 2, "higher miss: deck net +1 after two returns and one refill");
+  assertEq(
+    result.state.grid[2][2].suit + result.state.grid[2][2].rank,
+    "spades1",
+    "higher miss: cleared cards go under the deck, so the refill is a fresh card"
+  );
 })();
 
 /* --- applyPlay: lower hit and miss --- */
